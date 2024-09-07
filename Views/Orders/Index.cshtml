@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Muffins.Models.Orders>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MuffinItems.Muffinname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumMuffins)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BasicCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VatAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MuffinItems.Muffinname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumMuffins)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BasicCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VatAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrderNo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrderNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderNo })
+        </td>
+    </tr>
+}
+
+</table>
